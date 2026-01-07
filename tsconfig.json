@@ -1,0 +1,22 @@
+{
+    "compilerOptions": {
+        "moduleResolution": "NodeNext",
+        "strict": true,
+        "strictPropertyInitialization": false,
+        "forceConsistentCasingInFileNames": true,
+        "useDefineForClassFields": true,
+        "outDir": "./dist/",
+        "isolatedModules": true,
+        "resolveJsonModule": true,
+        "module": "NodeNext",
+        "target": "ES2024",
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true
+    },
+    "exclude": ["node_modules"],
+    "include": ["src"]
+}
+
+
