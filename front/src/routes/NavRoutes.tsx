@@ -4,6 +4,8 @@ import { createBrowserRouter,
 import { NotFound } from "../components/NotFound";
 import { Navbar } from "./Navbar";
 import { Players } from "../pages/play/Players";
+import { Player } from "../containers/play/Player";
+import { Create } from "../pages/create/Create";
 import { About } from "../pages/about/About";
 import { Contact } from "../pages/contact/Contact";
 
@@ -16,6 +18,14 @@ const RouteList = createBrowserRouter([
             {
                 path: "/",
                 element: <Players />
+            },
+            {
+                path: "/create",
+                element: <Create />
+            },
+            {
+                path: "/play/:id",
+                element: <Player />
             },
             {
                 path: "/about",

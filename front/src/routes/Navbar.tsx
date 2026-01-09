@@ -61,11 +61,11 @@ export const Navbar = () => {
                         </li>
                         <li className="nav__item">
                             <Link
-                                to={"/contact"}
+                                to={"/create"}
                                 className="nav__links"
                                 onClick={closeMenu}
                             >
-                                Contact
+                                Add Player
                             </Link>
                         </li>
                     </menu> 

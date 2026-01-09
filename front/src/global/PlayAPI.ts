@@ -15,9 +15,36 @@ export const PlayAPI = createApi({
             }),
             providesTags: ["Players"]
         }),
-        // add: builder.mutation<IPlay, IPlay>({
-        //     query: 
-        // })
+        onePlayer: builder.query<IPlay, number>({
+            query: (id) => ({
+                url: `/${id}`,
+                method: "GET"
+            }),
+            providesTags: ["Players"]
+        }),
+        add: builder.mutation<IPlay, IPlay>({
+            query: (payload) => ({
+                url: "/",
+                method: "POST",
+                body: payload
+            }),
+            invalidatesTags: ["Players"]
+        }),
+        update: builder.mutation<IPlayer, IPlayer>({
+            query: ({id, ...payload}) => ({
+                url: `/${id}`,
+                method: "PUT",
+                body: payload
+            }),
+            invalidatesTags: ["Players"]
+        }),
+        delete: builder.mutation<void, number>({
+            query: (id) => ({
+                url: `/${id}`,
+                method: "DELETE"
+            }),
+            invalidatesTags: ["Players"]
+        })
     })
 });
 

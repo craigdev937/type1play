@@ -1,0 +1,75 @@
+.play__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+    animation: fadeIn 0.6s ease;
+}
+
+.play__grid {
+    display: grid;
+    gap: 1.5rem;
+    animation: fadeIn 0.6s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.play__card {
+    background: var(--grey);
+    border: 3px solid var(--border);
+    padding: 1.5rem;
+    position: relative;
+    transition: all 0.3s ease;
+    animation: slideInUp 0.4s ease backwards;
+}
+
+@keyframes slideInUp {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.play__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    margin-bottom: 1rem;
+}
+
+.play__name {
+    font-size: 1.3rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--black);
+}
+
+.play__age {
+    background: var(--pink);
+    color: var(--primary);
+    padding: 0.25rem 0.75rem;
+    font-weight: 700;
+    font-size: 0.85rem;
+}
+
+.play__info {
+    color: var(--black);
+    margin-bottom: 1rem;
+}
+
+
+
+

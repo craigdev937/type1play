@@ -1,8 +1,10 @@
 import "reflect-metadata";
 import "dotenv/config";
 import express from "express";
+import path from "path";
 import helmet from "helmet";
 import logger from "morgan";
+import favicon from "serve-favicon";
 import { ERR } from "./middleware/midError";
 import { playRt } from "./routes/PlayerRt";
 import { dBase } from "./data/dBase";
@@ -13,6 +15,7 @@ import { dBase } from "./data/dBase";
         .catch((error) => console.log(error));
     const app: express.Application = express();
     app.use(helmet());
+    app.use(favicon(path.join(__dirname, "./public/", "favicon.ico")));
 
     // CORS Setup.
     app.use((req, res, next) => {

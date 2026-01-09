@@ -16,7 +16,6 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  
   "dependencies": {
     "dotenv": "^17.2.3",
     "express": "^5.2.1",
@@ -24,6 +23,7 @@
     "morgan": "^1.10.1",
     "pg": "^8.16.3",
     "reflect-metadata": "^0.2.2",
+    "serve-favicon": "^2.5.1",
     "typeorm": "^0.3.28",
     "zod": "^4.3.5"
   },
@@ -32,6 +32,7 @@
     "@types/morgan": "^1.9.10",
     "@types/node": "^25.0.3",
     "@types/pg": "^8.16.0",
+    "@types/serve-favicon": "^2.5.7",
     "nodemon": "^3.1.11",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3"
