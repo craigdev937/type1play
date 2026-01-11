@@ -1,6 +1,6 @@
 import React from "react";
 import "./Players.css";
-import { Link, useNavigate } from "react-router";
+import { useNavigate } from "react-router";
 import { PlayAPI } from "../../global/PlayAPI";
 import { Spinner } from "../../components/spin/Spinner";
 
@@ -49,7 +49,7 @@ export const Players = () => {
                         <section className="play__actions">
                             <button 
                                 className="btn"
-                                onClick={() => navigate(`/play/${play.id}`)}
+                                onClick={() => navigate(`/info/${play.id}`)}
                             >
                                 View Player
                             </button>

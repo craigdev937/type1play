@@ -43,6 +43,27 @@ body {
     overflow: hidden;
 }
 
+.btn:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+.btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.btn__sec {
+    background: transparent;
+    color: var(--text-primary);
+    border: 2px solid var(--border);
+}
+
+.btn__sec:hover {
+    background: var(--hover);
+    border-color: var(--pink);
+}
+
 
 
 

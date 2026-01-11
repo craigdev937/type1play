@@ -7,7 +7,7 @@ export const dBase: DataSource = new DataSource({
     type: "postgres",
     url: process.env.DATABASE_URL,
     synchronize: true,
-    logging: true,
+    logging: false,
     entities: [`${rootDir}/models/**/*.{ts,js}`],
     migrations: [`${rootDir}/migrations/**/*.{ts,js}`],
     subscribers: [`${rootDir}/subscribers/**/*.{ts,js}`]

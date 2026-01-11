@@ -10,7 +10,7 @@ export const PlayerSchema = z.object({
     age: z.number()
         .refine((vol) => {
             const num = (vol);
-            return !isNaN(num) && num >= 0 && num <= 150;
+        return !isNaN(num) && num >= 0 && num <= 150;
     }, "Age must be between 0 and 150"),
     info: z.string()
         .min(1, "Info is required")

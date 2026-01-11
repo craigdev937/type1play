@@ -15,7 +15,7 @@ export const PlayAPI = createApi({
             }),
             providesTags: ["Players"]
         }),
-        onePlayer: builder.query<IPlay, number>({
+        info: builder.query<IPlayer, number>({
             query: (id) => ({
                 url: `/${id}`,
                 method: "GET"
