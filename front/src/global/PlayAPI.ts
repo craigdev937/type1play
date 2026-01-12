@@ -13,14 +13,19 @@ export const PlayAPI = createApi({
                 url: "/",
                 method: "GET"
             }),
-            providesTags: ["Players"]
+            providesTags: (result) => result ? 
+                [...result.map(({ id }) => 
+                    ({ type: "Players" as const, id})),
+                    { type: "Players", id: "LIST" },
+                ] : [{ type: "Players", id: "LIST" }]
         }),
-        info: builder.query<IPlayer, number>({
+        info: builder.query<IPlayer, string>({
             query: (id) => ({
                 url: `/${id}`,
                 method: "GET"
             }),
-            providesTags: ["Players"]
+            providesTags:(result, error, id) => 
+                [{ type: "Players", id }]
         }),
         add: builder.mutation<IPlay, IPlay>({
             query: (payload) => ({
@@ -36,9 +41,9 @@ export const PlayAPI = createApi({
                 method: "PUT",
                 body: payload
             }),
-            invalidatesTags: ["Players"]
+            invalidatesTags: [{ type: "Players", id: "LIST" }]
         }),
-        delete: builder.mutation<void, number>({
+        delete: builder.mutation<void, string>({
             query: (id) => ({
                 url: `/${id}`,
                 method: "DELETE"

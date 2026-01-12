@@ -7,7 +7,7 @@ export interface IPlay {
 
 export interface IPlayer extends IPlay {
     // useParams defaults to a string.
-    id: number | string
+    id: string
 };
 
 

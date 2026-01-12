@@ -8,8 +8,8 @@ export const Players = () => {
     const navigate = useNavigate();
     const { error, isLoading, 
         data } = PlayAPI.useAllPlayersQuery();
+    const [deletePlayer] = PlayAPI.useDeleteMutation();
     const PL = data;
-    console.log(PL);
     
     if (error) {
         if ("status" in error) {
@@ -19,6 +19,12 @@ export const Players = () => {
             return <h1>Error: {errMSG}</h1>
         } else {
             return <h1>Error: {error.message}</h1>
+        }
+    };
+
+    const handleDelete = async (id: string) => {
+        if (window.confirm("Delete this Player?")) {
+            await deletePlayer(id);
         }
     };
 
@@ -48,10 +54,22 @@ export const Players = () => {
 
                         <section className="play__actions">
                             <button 
-                                className="btn"
+                                className="btn btn__small btn__sec"
                                 onClick={() => navigate(`/info/${play.id}`)}
                             >
                                 View Player
+                            </button>
+                            <button 
+                                className="btn btn__small btn__sec"
+                                onClick={() => navigate(`/edit/${play.id}`)}
+                            >
+                                Edit Player
+                            </button>
+                            <button 
+                                className="btn btn__small"
+                                onClick={() => handleDelete(play.id)}
+                            >
+                                Delete
                             </button>
                         </section>
                     </aside>

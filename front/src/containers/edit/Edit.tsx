@@ -9,7 +9,7 @@ import { Spinner } from "../../components/spin/Spinner";
 export const Edit = () => {
     const navigate = useNavigate();
     const { id } = useParams();
-    const PID = id !== undefined ? Number(id) : 0;
+    const PID = id !== undefined ? String(id) : "";
     const [updatePlayer] = PlayAPI.useUpdateMutation();
     const { error, isLoading, 
         data: player } = PlayAPI.useInfoQuery(PID);
@@ -33,7 +33,7 @@ export const Edit = () => {
     };
 
     return (
-        <>
+        <React.Fragment>
             {isLoading ? (
                 <Spinner />
             ) : (
@@ -46,7 +46,7 @@ export const Edit = () => {
                     />
                 </main>
             )}
-        </>
+        </React.Fragment>
     );
 };
 

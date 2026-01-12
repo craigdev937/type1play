@@ -64,6 +64,11 @@ body {
     border-color: var(--pink);
 }
 
+.btn__small {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+}
+
 
 
 
