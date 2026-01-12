@@ -2,7 +2,7 @@ import "./Form.css";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { PlayerSchema, PSType } from "../../validation/Schema";
-import { IPlay } from "../../models/Interfaces";
+import { IPlay, IPlayer } from "../../models/Interfaces";
 
 type Props = {
     initialData?: IPlay,
