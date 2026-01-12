@@ -33,7 +33,7 @@ export const PlayAPI = createApi({
                 method: "POST",
                 body: payload
             }),
-            invalidatesTags: ["Players"]
+            invalidatesTags: [{ type: "Players", id: "LIST" }]
         }),
         update: builder.mutation<IPlayer, IPlayer>({
             query: ({id, ...payload}) => ({
