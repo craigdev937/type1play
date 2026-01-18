@@ -12,7 +12,11 @@ class PlayerClass {
             })
             await player.save();
             res.status(res.statusCode)
-                .json(player);
+                .json({
+                    success: true,
+                    message: "Player Created Successfully!",
+                    date: player
+                });
         } catch (error) {
             res.status(res.statusCode)
                 .json(res.statusMessage);
@@ -25,7 +29,10 @@ class PlayerClass {
             await Players
                 .find()
                 .then((players) => res.status(res.statusCode)
-                .json(players));
+                .json({
+                    success: true,
+                    data: players
+                }));
         } catch (error) {
             res
                 .status(res.statusCode)
@@ -43,7 +50,10 @@ class PlayerClass {
             });
             res
                 .status(res.statusCode)
-                .json(player);
+                .json({
+                    success: true,
+                    data: player
+                });
         } catch (error) {
             res
                 .status(res.statusCode)
@@ -66,7 +76,11 @@ class PlayerClass {
             await player.save();
             res
                 .status(res.statusCode)
-                .json(player);
+                .json({
+                    success: true,
+                    message: "The Player was Updated!",
+                    data: player
+                });
         } catch (error) {
             res
                 .status(res.statusCode)
@@ -85,7 +99,11 @@ class PlayerClass {
             await player.remove();
             res
                 .status(res.statusCode)
-                .json("The Player was Deleted!");
+                .json({
+                    success: true,
+                    message: "The Player was Deleted!",
+                    data: player
+                });
         } catch (error) {
             res
                 .status(res.statusCode)
